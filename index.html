@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="UTF-8">
+		<title>TempTabQA</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="theme-color" content="#157879">
+		<link rel="stylesheet" href="css/normalize.css">
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/cayman.css">
+	</head>
+	<body>
+		<section class="page-header">
+			<h1><img src="figures/logo.png" style="max-width:40%;"></h1>
+			<a href="https://arxiv.org/pdf/2311.08002.pdf" class="btn">Paper</a>
+			<a href="https://github.com/TempTabQA0/temptabqa/tree/main/data/maindata" class="btn">Dataset</a>
+			<a href="explore.html" class="btn">Explore</a>
+			<a href="https://github.com/TempTabQA0/temptabqa/tree/main" class="btn">Code</a> 
+			<a href="" class="btn">Video</a>
+			<a href="https://docs.google.com/presentation/d/16UdAeHrFhxFKvoURTK4hqRTFSzJUqdZliAntwKqjgTs/edit#slide=id.g2a249e399d8_0_0" class="btn">PPT</a><br>
+		</section>
+		<section class="main-content">
+			<h1><small>Temporal Question Answering for Semi-Structured Tables</small></h1>
+			<h2><a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>About</h2>
+			<p style="text-align: justify;">In semi-structured data, such as Infobox tables, temporal information about entities is common but often challenging for current NLP systems to handle effectively. Our introduction of TempTabQA addresses this by presenting a rich dataset consisting of 11,454 question-answer pairs sourced from 1,208 diverse Wikipedia Infobox tables spanning over 90 distinct domains. The evaluation of leading models in this task reveals a significant gap, with even the best-performing LLMs trailing human performance by more than 13.5 F1 points. Our dataset stands as a robust benchmark, aiming to push the boundaries and improve the temporal reasoning capabilities of NLP models in handling such intricate data structures.</p>
+			<p style="text-align: justify;">TL;DR: TempTabQA, featuring 11,000+ Q&A pairs sourced from varied Wikipedia Infobox tables, evaluates NLP models' understanding of temporal data. Results indicate top models lag over 13.5 F1 points behind human performance, highlighting the potential to improve models' temporal reasoning<p>
+			<h2><a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>TempTabQA dataset creation procedure</h2>
+			<p style="text-align: justify;">We use Amazon Mechanical Turk (<a href="https://www.mturk.com/">mturk</a>) for data collection and validation. Annotators were presented with a tabular premise (infobox tables) and instructed to write three temporal questions based on the table along with their answers.We provided detailed instructions with illustrative examples using a table and also general principles to bear in mind (refer to <a href="annotation-template.html">template</a>). For each question-answer pair in the development and the test sets, we also got the answers verified by 3 to 6 turkers as shown here (refer to <a href="validation-template.html">template</a>).</p>
+			<h2><a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>TempTabQA Example</h2>
+			<p style="text-align: justify; display:inline;">
+				Below is an example from the TempTabQA dataset. 
+			</p>
+			<!-- <p><b>Example 1</b></p> -->
+			<p style="text-align: center;"><img src="figures/example1.png" style="max-width:30%;"></p>
+			<p style="margin-left:10%; font-size: small; text-align: justify; display: block;">
+				<b>Question 1:</b> When was the most recent time that Roy Emerson won the Australian Open ?<br>
+				<b>Answer 1:</b> 1969<br>
+				<b>Question 2:</b> How long did Roy Emerson play in the amateur league before going professional ?<br>
+				<b>Answer 2:</b> 15 years<br>
+				<b>Question 3:</b> How old was Roy Emerson when he retired from playing professionally ?<br>
+				<b>Answer 3:</b> 47 years old<br>
+				<b>Question 4:</b> What year was Roy Emerson inducted into the International Tennis Hall of Fame ?<br>
+				<b>Answer 4:</b> 1982<br>
+				<b>Question 5:</b> Which Grand Slam tournament did Emerson win the 2nd time he won the Davis Cup team competition?<br>
+				<b>Answer 5: </b>French Open<br>
+			</p>
+
+			<!-- <p><b>Example 2</b></p>
+			<p style="text-align: center;"><img src="figures/example2.png" style="max-width:30%;"></p>
+			<p style="margin-left:10%; font-size: small; text-align: justify; display: block;">
+				<b>Question 1:</b>Who was the Prince of Serbia in 1857 before Miloš Obrenovic ́ I?<br>
+				<b>Answer 1:</b> Alexander Karadordevic ́<br>
+				<b>Question 2:</b> How many years before his death did Miloš Obrenovic ́ I begin his second reign as the Prince of Serbia?<br>
+				<b>Answer 2:</b> 2 years<br>
+				<b>Question 3:</b> How long after Miloš Obrenovic ́’s reign as Grand Vožd of Serbia ended did his second reign as Prince of Serbia begin?<br>
+				<b>Answer 3:</b> 41 years<br>
+				<b>Question 4:</b> How many years elapsed between reigns of Prince of Serbia for Miloš Obrenovic ́ I?<br>
+				<b>Answer 4:</b> 19 years<br>
+				<b>Question 5:</b>Who was the Prince of Serbia in 1840?<br>
+				<b>Answer 5:</b> Milan II<br>
+			</p>
+
+			<p><b>Example 3</b></p>
+			<p style="text-align: center;"><img src="figures/example3.png" style="max-width:30%;"></p>
+			<p style="margin-left:10%; font-size: small; text-align: justify; display: block;">
+				<b>Question 1:</b> How many singles were released in the same year Death Magnetic was released?<br>
+				<b>Answer 1:</b> 2<br>
+				<b>Question 2:</b> How many months did it take for Metallica to record Death Magnetic?<br>
+				<b>Answer 2:</b> 14 Months<br>
+				<b>Question 3:</b> How many years after Death Magnetic did Metallica record another studio album?<br>
+				<b>Answer 3:</b> 8 years<br>
+				<b>Question 4:</b> How many singles were released on the Death Magnetic album in 2008-2009?<br>
+				<b>Answer 4:</b> 3<br>
+			</p> -->
+			<!-- <h2><a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reasoning</h2>
+			<p style="text-align: justify;">To study the nature of reasoning that is involved in deciding the relationship between a table and a hypothesis, we adapted the set of reasoning categories from <a href="https://gluebenchmark.com">GLUE Benchmark</a> to table premises. All definitions and their boundaries were verified with several rounds of discussions. Following this, three graduate students (authors of the paper) independently annotated 160 pairs from the dev and alpha 3 test sets each, and edge cases were adjudicated to arrive at consensus labels.</p>
+			<figure>
+				<img src="figures/reasoning.png" style="max-width:100%;">
+				<figcaption>Type and counts of reasoning in the Development and test alpha3 data splits. OOT and KCS are short forms of out-of-table and Knowledge & Common Sense, respectively.
+				</figcaption>
+			</figure> -->
+			<!-- <h2><a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>TempTabQA dataset statistics and analysis</h2> -->
+			<h2><a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>TempTabQA dataset statistics</h2>
+			<!-- <h3>Statistics</h3> -->
+			<p style="text-align: center;"><img src="figures/dataset_statistics.png" style="max-width:55%;" ></p>
+			<p style="text-align: center;"><img src="figures/dataset_splti_statistics.png" style="max-width:40%;"></p>
+			<p style="text-align: justify;">TempTabQA consists of 4 splits (train, dev, head, tail). Head are popular domain, Tail are rare domains</p>
+			
+			<!-- <div>
+				<table style="margin-left:15%; margin-right:15%;">
+					<tr>
+					  <th>Data Split</th>
+					  <th>#categories</th>
+					  <th>#Tables</th>
+					  <th>#QA Pairs</th>
+					</tr>
+					<tr>
+					  <td>Train</td>
+					  <td>73</td>
+					  <td>784</td>
+					  <td>7680</td>
+					</tr>
+					<tr>
+					  <td>Dev</td>
+					  <td>67</td>
+					  <td>97</td>
+					  <td>885</td>
+					</tr>
+					<tr>
+					  <td>Head-Test</td>
+					  <td>73</td>
+					  <td>202</td>
+					  <td>1851</td>
+					</tr>
+					<tr>
+					  <td>Tail-Test</td>
+					  <td>19</td>
+					  <td>125</td>
+					  <td>1038</td>
+					</tr>
+				  </table>
+			</div> -->
+			<h2><a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>TempTabQA Domain statistics</h2>
+
+			<!-- <h3>Categorical analysis</h3> -->
+			<p style="text-align: justify;">The charts below summarize the different categories that are spanned by our tables. It has over 90 fine grained domains.</p>
+			<p style="text-align: center;"><img src="figures/categorical_analysis.png" style="max-width:100%;" ></p>
+			<h2><a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>TempTabQA dataset analysis</h2>
+			<!-- <h3><a id="user-content-header-3" class="anchor" href="#header-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Quality of questions</h3> -->
+			<!-- <h3>Quality of questions</h3> -->
+			<p style="text-align: justify;">These tables summarise the diversity of our dataset based on the complexity of questions, their nature, and the included functional operation if any and on the type of the entity involved.</p>
+			<p style="text-align: center;"><img src="figures/complex.png" style="max-width:50%;" ></p>
+			<p style="text-align: center;"><img src="figures/implicit.png" style="max-width:50%;" ></p>
+			<p style="text-align: center;"><img src="figures/temporal.png" style="max-width:35%;" ></p>
+			<p style="text-align: center;"><img src="figures/answer.png" style="max-width:90%;" ></p>
+
+			<!-- <div>
+				<table style="margin-left:15%; margin-right:15%;">
+					<thead>
+						<tr>
+							<th>Question Type Percent(%)</th>
+							<th>Question Type Percent(%)</th>
+						</tr>
+					</thead>
+					<tbody align="center">
+						<tr>
+							<td><b>Simple</b></td>
+							<td><b>Complex</b></td>
+						</tr>
+						<tr>
+							<td>57.81</td>
+							<td>42.19</td>
+						</tr>
+						<tr>
+							<td><b>Multiple Entity</b></td>
+							<td><b>Single Entity</b></td>
+						</tr>
+						<tr>
+							<td>47.90</td>
+							<td>52.10</td>
+						</tr>
+					</tbody></table>
+					<p style="margin-left:15%; margin-right:15%;">Question type percentage distribution</p>
+				
+			</div>
+			
+			<div>
+				<table style="margin-left:15%; margin-right:15%;">
+					<thead>
+						<tr>
+							<th>Type</th>
+							<th>Percent (%)</th>
+							<th>Interval</th>
+							<th>Percent (%)</th>
+						</tr>
+					</thead>
+					<tbody align="center">
+						<tr>
+							<td>#implicit</td>
+							<td>63.23</td>
+							<td>Past</td>
+							<td>3.08</td>
+						</tr>
+						<tr>
+							<td>#explicits</td>
+							<td>36.76</td>
+							<td>Future</td>
+							<td>8.48</td>
+						</tr>
+						<tr>
+							<td>#ordinal</td>
+							<td>18.63</td>
+							<td>Present</td>
+							<td>66.64</td>
+						</tr>
+					</tbody></table>
+					<p style="margin-left:15%; margin-right:15%;">Percentage distribution for different types and intervals</p>
+				
+			</div>
+			
+			<div>
+				<table style="margin-left:15%; margin-right:15%;" >
+					<thead>
+						<tr>
+							<th>Operation</th>
+							<th>#QA</th>
+						</tr>
+					</thead>
+					<tbody align="center">
+						<tr>
+							<td>Maximum</td>
+							<td>402</td>
+						</tr>
+						<tr>
+							<td>Sum</td>
+							<td>312</td>
+						</tr>
+						<tr>
+							<td>Count</td>
+							<td>3564</td>
+						</tr>
+						<tr>
+							<td>Minimum</td>
+							<td>377</td>
+						</tr>
+						<tr>
+							<td>Average</td>
+							<td>40</td>
+						</tr>
+						<tr>
+							<td>Difference</td>
+							<td>98</td>
+						</tr>
+						<tr>
+							<td>Compare</td>
+							<td>133</td>
+						</tr>
+					</tbody></table>
+					<p style="margin-left:15%; margin-right:15%;">Operations and their corresponding #QA values</p>
+				
+			</div>
+			<h3>Analysis based on entity type and answer type</h3>
+			<p style="text-align: justify;">These tables summarise the diversity of our dataset based on the type of the entity involved.</p>
+			<div>
+				<table style="margin-left:15%; margin-right:15%;">
+					<thead>
+						<tr>
+							<th>Entity type</th>
+							<th>#QA</th>
+						</tr>
+					</thead>
+					<tbody align="center">
+						<tr>
+							<td>Money</td>
+							<td>97</td>
+						</tr>
+						<tr>
+							<td>Location</td>
+							<td>411</td>
+						</tr>
+						<tr>
+							<td>Person</td>
+							<td>843</td>
+						</tr>
+						<tr>
+							<td>Organization</td>
+							<td>384</td>
+						</tr>
+						<tr>
+							<td>Percentage</td>
+							<td>44</td>
+						</tr>
+						<tr>
+							<td>Product</td>
+							<td>57</td>
+						</tr>
+					</tbody></table>
+					<p style="margin-left:15%; margin-right:15%;">Entity types and their corresponding #QA values</p>
+				
+			</div>
+			
+			<div>
+				<table style="margin-left:15%; margin-right:15%;">
+					<thead>
+						<tr>
+							<th>Complexity</th>
+							<th>#QA Count</th>
+						</tr>
+					</thead>
+					<tbody align="center">
+						<tr>
+							<td>Ranking</td>
+							<td>58</td>
+						</tr>
+						<tr>
+							<td>Boolean</td>
+							<td>45</td>
+						</tr>
+						<tr>
+							<td>Temporal</td>
+							<td>4823</td>
+						</tr>
+						<tr>
+							<td>Age</td>
+							<td>1085</td>
+						</tr>
+					</tbody></table>
+					<p style="margin-left:15%; margin-right:15%">Complexity types and their corresponding #QA counts</p>
+				
+			</div> -->
+			<h2><a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Validation Statistics</h2>
+
+			<!-- <h3>Data Validation Statistics</h3> -->
+			<!-- <div>
+				<table style="margin-left:15%; margin-right:15%">
+					<thead>
+						<tr>
+							<th>Dataset</th>
+							<th>Number</th>
+							<th>Gold/Total</th>
+						</tr>
+					</thead>
+					<tbody align="center">
+						<tr>
+							<td rowspan="4">Dev</td>
+							<td>3</td>
+							<td>82/91</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>3/3</td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td>1/2</td>
+						</tr>
+						<tr>
+							<td>Overall</td>
+							<td>148/166</td>
+						</tr>
+						<tr>
+							<td rowspan="4">Head</td>
+							<td>3</td>
+							<td>898/1033</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>20/32</td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td>23/32</td>
+						</tr>
+						<tr>
+							<td>Overall</td>
+							<td>1627/1821</td>
+						</tr>
+						<tr>
+							<td rowspan="4">Tail</td>
+							<td>3</td>
+							<td>386/468</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>26/33</td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td>39/49</td>
+						</tr>
+						<tr>
+							<td>Overall</td>
+							<td>999/1155</td>
+						</tr>
+					</tbody></table> -->
+					<!-- <p style="margin-left:15%; margin-right:15%">Dataset information with respective numbers and Gold/Total values</p> -->
+				
+			<!-- </div> -->
+			<p><b>Majority Agreement and Human Accuracy</b></p>
+			<p style="text-align: center;"><img src="figures/majority_agreement.ong.png" style="max-width:50%;" ></p>
+			<p><b>Exact agreement between annotators</b></p>
+			<p style="text-align: center;"><img src="figures/exact_agreement.png" style="max-width:40%;" ></p>
+			<!-- <div>
+				<table style="margin-left:15%; margin-right:15%;">
+					<thead>
+						<tr>
+							<th>Dataset</th>
+							<th>Majority Agreement</th>
+							<th>Human Accuracy</th>
+						</tr>
+					</thead>
+					<tbody align="center">
+						<tr>
+							<td>Dev set</td>
+							<td>91.56</td>
+							<td>86.36</td>
+						</tr>
+						<tr>
+							<td>Head Test</td>
+							<td>93.62</td>
+							<td>86.17</td>
+						</tr>
+						<tr>
+							<td>Tail Test</td>
+							<td>89.73</td>
+							<td>86.47</td>
+						</tr>
+					</tbody>
+				</table> -->
+					<!-- <p style="margin-left:15%; margin-right:15%;">Dataset information with Majority Agreement and Human Accuracy</p> -->
+				
+			<!-- </div> -->
+			
+			<!-- <h2><a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Knowledge + InfoTabS</h2>
+			<p style="text-align: justify;"> You should check our <a href="https://2021.naacl.org/">NAACL 2021</a> paper which <a href="https://knowledge-infotabs.github.io">enhance InfoTabS</a> with extra Knowledge.</p>
+			<h2><a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>TabPert</h2>
+			<p style="text-align: justify;"> You should check our <a href="https://2021.emnlp.org">EMNLP 2021</a> paper which is a <a href="https://tabpert.github.io">tabular perturbation platform</a> to generate counterfactual examples.</p> -->
+
+			<h2><a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Performance of LLMs</h2>
+			<p><b>Few shot with chain of thought prompting</b></p>
+			<p style="text-align: center;"><img src="figures/fewshot_results.png" style="max-width:90%;"></p>
+			<p><b>Instruction Fine-tune</b></p>
+			<p style="text-align: center;"><img src="figures/finetuning_results.png" style="max-width:90%;"></p>
+			<p>Evaluating recent LLMs on TEMPTABQA dataset, which  reveals significant performance gaps as compared to human. Approaches include zero and few shot prompting with/without chain of thought reasoning, converting to knowledge graph representation and inferencing on that, Instruction finetuning on LLMs to evaluate their performance on our dataset. </p>
+
+			<h2><a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>People</h2>
+			<p style="text-align: justify;"> The TempTabQA dataset is prepared by the following people: </p>
+			<figure style="margin-left: 0;">
+				<img src="figures/vivekg.jpg" style="width:15%;">
+				<img src="figures/pranshu.jpeg" style="width:13%;">
+				<img src="figures/mahek.png" style="width:11%;">
+				<img src="figures/shuo.jpeg" style="width:13.5%;">
+				<img src="figures/yujie.png" style="width:15%;">
+				<img src="figures/ridho.png" style="width:15%;">
+				<img src="figures/viveks.jpg" style="width:13.5%;">
+				<figcaption>From left to right, <a href="https://vgupta123.github.io">Vivek Gupta</a>, <a href="https://www.linkedin.com/in/pranshu-kandoi/">Pranshu Kandoi</a>, <a href="https://www.linkedin.com/in/mahekvora/">Mahek Vora</a>, <a href="https://www.linkedin.com/in/shuo-zhang-58a1a9b1/">Shuo Zhang</a>, <a href="https://www.linkedin.com/in/yujiehe/">Yujie He</a>, <a href="https://www.linkedin.com/in/ridhoreinanda/">Ridho Reinanda</a> and <a href="https://svivek.com/">Vivek Srikumar</a>. </figcaption>
+			</figure>
+			<h2><a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Citation</h2>
+			<p style="text-align: justify;"> Please cite our paper as below if you use the TempTabQA dataset.</p>
+			<pre><code>@inproceedings{gupta2023temptabqa,
+			title = "{TempTabQA}: Temporal Question Answering for Semi-Structured Tables",
+			author = "Gupta, Vivek  and
+			  Kandoi, Pranshu  and
+			  Vora, Bhavesh, Mahek  and
+			  Zhang, Shuo and
+			  He, Yujie and
+			  Reinanda, Ridho and
+			  Srikumar, Vivek",
+			year = "2023",
+			abstract = "Semi-structured data, such as Infobox tables, often include temporal information about en- tities, either implicitly or explicitly. Can current NLP systems reason about such information in semi-structured tables? To tackle this question, we introduce the task of temporal question answering on semi-structured tables. We present a dataset, TEMPTABQA, which comprises 11,454 question-answer pairs extracted from 1,208 Wikipedia Infobox tables spanning more than 90 distinct domains. Using this dataset, we evaluate several state-of-the-art models for temporal reasoning. We observe that even the top-performing LLMs lag behind human performance by more than 13.5 F1 points. Given these results, our dataset has the potential to serve as a challenging benchmark to improve the temporal reasoning capabilities of NLP models.",
+		}</code></pre>
+			<h2><a id="user-content-header-2" class="anchor" href="#header-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Acknowledgement</h2>
+			<!-- <p style="text-align: justify;">Authors thank members of the <a href="https://svivek.com/">Utah NLP group</a> for their valuable insights and
+			suggestions at various stages of the project; and <a href="https://acl2020.org/">ACL 2020</a> reviewers for pointers to
+			related works, corrections, and helpful comments. Authors thank the largest free resource <a href="https://en.wikipedia.org/wiki/Main_Page"> Wikipedia</a> for InfoTabS tables. We are also indebted to the
+			many anonymous <a href="https://www.mturk.com/"> Turkers</a> who helped craft the dataset.  We acknowledge the support
+			of the support of NSF Grants No. 1822877 and 1801446, and a generous gift from
+			<a href="https://research.google/" >Google</a>.</p> -->
+
+			<p style="text-align: justify;">The authors express their gratitude to Bloomberg’s AI Engineering team,
+				particularly Edgar Meij and Prabhanjan Kambadur, for their invaluable feed- back and guidance. 
+				We are also thankful for the valuable insights provided by Ellen Riloff, Dan Roth, and the Utah NLP group. 
+				Special thanks to Dibyakanti Kumar and Manasvi Kundalia for their contributions. 
+				Vivek Gupta acknowledges the support received from Bloomberg’s Data Science Ph.D. Fellowship and the Cognitive Computation Group at the University of Pennsylvania. 
+				This work is partially supported by NSF grants #1801446, #1822877, #2007398 and #2129111. 
+				The views and conclusions contained herein are those of the authors and should not be interpreted as necessarily representing the official policies of any government agency. 
+				Lastly, we extend our appreciation to the reviewing team for their insightful comments.
+			</p>
+			<footer class="site-footer">
+				<span class="site-footer-owner"><a href="https://temptabqa0.github.io">TempTabQA</a> is maintained by <a href="https://vgupta123.github.io">Vivek Gupta</a>.</span>
+				<span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman</a> theme by <a href="https://github.com/jasonlong">jasonlong</a>.</span>
+			</footer>
+		</section>
+	</body>
+</html>
