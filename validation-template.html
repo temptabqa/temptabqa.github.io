@@ -1,175 +1,379 @@
+<!-- For help on using this template, see the blog post: https://blog.mturk.com/editing-the-survey-link-project-template-in-the-ui-7c75285105fb#.py7towsdx --><!-- HIT template: SurveyLink-v3.0 --><!-- The following snippet enables the 'responsive' behavior on smaller screens -->
 <meta content="width=device-width,initial-scale=1" name="viewport" />
 <section class="container" id="SurveyLink"><!-- Instructions -->
 <div class="row">
 <div class="col-xs-12 col-md-12">
-<div class="panel panel-primary"><!-- WARNING: the ids "collapseTrigger" and "instructionBody" are being used to enable expand/collapse feature --><a class="panel-heading" href="javascript:void(0);" id="collapseTrigger"><strong>Table Comprehension Instructions</strong></a>
-<div class="panel-body" id="instructionBody">
-<p>In this task, we will ask you to make inferences about the information presented in a tabular form.</p>
+<div class="panel panel-primary"><!-- WARNING: the ids "collapseTrigger" and "instructionBody" are being used to enable expand/collapse feature --><a class="panel-heading" href="javascript:void(0);" id="collapseTrigger"><strong>Answering Temporal Questions on Tables&nbsp;</strong><span class="collapse-text">(Read them carefully)</span> </a>
+<div id="instructionBody">
+<p>You will be <strong>answering temporal questions </strong>based on the <strong>information provided in a table</strong>.</p>
 
-<p>We will show you a table and three statements. Using only the table and <u>what <i>you</i> believe most people know</u> about the world, you should choose one of the following options for each statement:</p>
+<p>In particular, your task is to provide the</p>
 
 <ol>
-	<li>Based on the information in the table and what is commonly known, the statement is <b>definitely true</b>.</li>
-	<li>Based on the information in the table and what is commonly known, the statement is <b>definitely false</b>.</li>
-	<li>The statement <b>could be true, but could also be false</b>. We need additional information that is neither commonly known, nor explicitly mentioned in the table comes to a conclusion.</li>
+	<li><strong>correct answer to the given question</strong>, and</li>
+	<li><strong>explanation behind the answer you wrote</strong>,</li>
 </ol>
+
+<p>based on&nbsp;</p>
+
+<ol>
+	<li>the<strong> time-related facts </strong>presented in the <strong>table (using only the table)</strong>, and</li>
+	<li>your <strong>understanding of </strong>what you believe&nbsp;<b>most people know </b><strong>about the world</strong> (temporal&nbsp;common sense)</li>
+</ol>
+
+<p>Please follow these guidelines to ensure accurate and concise answers. ​</p>
+
+<p><strong><span style="color:#008000;">✔ Preferred ✔</span></strong></p>
+
+<ul>
+	<li><span style="color:#006400;">✔&nbsp;</span>Assume the<strong>&nbsp;current year to be 2022.</strong></li>
+	<li><span style="caret-color: rgb(0, 100, 0); color: rgb(0, 100, 0);">✔&nbsp;</span>​Read the <strong>table and question carefully</strong> <strong>to understand</strong> the table information.</li>
+	<li><span style="color:#006400;">✔</span> Use <strong>only the information in the table to answer the question</strong>.</li>
+	<li><span style="color:#008000;">✔</span>&nbsp;Keep your <strong>answers concise</strong> and <strong>to the point.</strong></li>
+	<li><span style="color:#008000;">✔</span>&nbsp;Use <strong>common sense</strong> to provide additional context where necessary.</li>
+	<li><span style="color:#008000;">✔</span>&nbsp;Use <strong>proper grammar and punctuation</strong> in your <strong>reasoning steps</strong>.</li>
+</ul>
+
+<p apple="" background-color:="" color="" font-size:="" helvetica="" noto="" ol="" segoe="" ui="" white-space:=""><strong><span style="color:#FF0000;">✘ Avoid&nbsp;✘</span></strong></p>
+
+<ul>
+	<li><span style="color: rgb(255, 0, 0);">✗&nbsp;</span>Use <strong>outside knowledge or information</strong> not present in the table.</li>
+	<li><span style="color: rgb(255, 0, 0);">✗&nbsp;</span>Use <strong>names of people, places, or organizations not mentioned</strong> in the table.</li>
+	<li><span style="color: rgb(255, 0, 0);">✗&nbsp;</span>Provide answers <strong>that are overly verbose or unclear.</strong></li>
+	<li><span style="color: rgb(255, 0, 0);">✗&nbsp;</span>Provide <strong>explanation steps&nbsp;</strong>that <strong>are incomplete or ambiguous.</strong></li>
+	<li><span style="color: rgb(255, 0, 0);">✗&nbsp;</span>Include <strong>opinions or assumptions</strong> in your explanation&nbsp;steps.</li>
+	<li><span style="color: rgb(255, 0, 0);">✗&nbsp;</span>Use <strong>abbreviations or acronyms</strong> that are not defined in the table or the question</li>
+</ul>
 
 <p><strong>[Important]</strong>&nbsp;Avoid using information that you may know if you believe that it is not generally known.</p>
 
 <div>The table below and the following examples clarify the instructions. Please go over these examples carefully.</div>
-&nbsp;
 
-<table align="center" border="1">
-	<caption><strong>New York Stock Exchange</strong></caption>
+<table align="center" border="1" style="width:22em">
+	<caption style="padding-bottom:0.2em;">Joe Biden</caption>
 	<tbody>
 		<tr>
-			<th scope="row" style="text-align: left;">Type</th>
-			<td style="text-align: left;">Stock exchange</td>
+			<th colspan="2" style="text-align:center;background:#eee;">46th President of the United States</th>
 		</tr>
 		<tr>
-			<th scope="row" style="text-align: left;">Location</th>
-			<td style="text-align: left;">New York City, New York, U.S.</td>
+			<th colspan="2" style="text-align:center;background:#eee;">Incumbent</th>
 		</tr>
 		<tr>
-			<th scope="row" style="text-align: left;">Founded</th>
-			<td style="text-align: left;">May&nbsp;17, 1792<span>; 226 years ago</span><span style="display:none">&nbsp;(<span>1792-05-17</span>)</span></td>
+			<th scope="row" style="padding-top:0.2em;line-height:1.2em; padding-right:1.0em;">Assumed Office</th>
+			<td style="line-height:1.3em;">January 20, 2021</td>
 		</tr>
 		<tr>
-			<th scope="row" style="text-align: left;">Owner</th>
-			<td style="text-align: left;">Intercontinental Exchange</td>
+			<th scope="row" style="padding-top:0.2em;line-height:1.2em; padding-right:1.0em;">Vice President</th>
+			<td style="line-height:1.3em;">Kamala Harris</td>
 		</tr>
 		<tr>
-			<th scope="row" style="text-align: left;">Key&nbsp;people</th>
-			<td>
-			<div>
-			<ul>
-				<li style="text-align: left;">Jeffrey Sprecher&nbsp;<span style="font-size:85%;">(Chairman)</span></li>
-				<li style="text-align: left;">Betty Liu&nbsp;<span style="font-size:85%;">(Executive Vice Chairman)</span></li>
-				<li style="text-align: left;">Stacey Cunningham&nbsp;<span style="font-size:85%;">(President)</span></li>
-			</ul>
-			</div>
-			</td>
+			<th scope="row" style="padding-top:0.2em;line-height:1.2em; padding-right:1.0em;">Preceded By</th>
+			<td style="line-height:1.3em;">Donald Trump</td>
 		</tr>
 		<tr>
-			<th scope="row" style="text-align: left;">Currency</th>
-			<td style="text-align: left;">United States dollar</td>
+			<th colspan="2" style="text-align:center;background:#eee;">47th Vice President of the United States</th>
 		</tr>
 		<tr>
-			<th scope="row" style="text-align: left;">No. of&nbsp;listings</th>
-			<td style="text-align: left;">2,400</td>
+			<th scope="row" style="padding-top:0.2em;line-height:1.2em; padding-right:1.0em;">In Office</th>
+			<td style="line-height:1.3em;">January 20, 2009 - January 20, 2017</td>
 		</tr>
 		<tr>
-			<th scope="row" style="text-align: left;">Market cap</th>
-			<td style="text-align: left;">US$23.2 trillion</td>
+			<th scope="row" style="padding-top:0.2em;line-height:1.2em; padding-right:1.0em;">President</th>
+			<td style="line-height:1.3em;">Barack Obama</td>
 		</tr>
 		<tr>
-			<th scope="row" style="text-align: left;">Volume</th>
-			<td style="text-align: left;">US$20.161 trillion (2011)</td>
+			<th scope="row" style="padding-top:0.2em;line-height:1.2em; padding-right:1.0em;">Preceded By</th>
+			<td style="line-height:1.3em;">Dick Cheney</td>
 		</tr>
 		<tr>
-			<th scope="row" style="text-align: left;">Indices</th>
-			<td>
-			<div>
-			<ul>
-				<li style="text-align: left;">Dow Jones Industrial Average</li>
-				<li style="text-align: left;">S&amp;P 500</li>
-				<li style="text-align: left;">NYSE Composite</li>
-			</ul>
-			</div>
-			</td>
+			<th scope="row" style="padding-top:0.2em;line-height:1.2em; padding-right:1.0em;">Succeeded By</th>
+			<td style="line-height:1.3em;">Mike Pence</td>
+		</tr>
+		<tr>
+			<th colspan="2" style="text-align:center;background:#eee;">United States Senator from Delaware</th>
+		</tr>
+		<tr>
+			<th scope="row" style="padding-top:0.2em;line-height:1.2em; padding-right:1.0em;">In Office</th>
+			<td style="line-height:1.3em;">January 3,1973 - Janurary 15, 2009</td>
+		</tr>
+		<tr>
+			<th scope="row" style="padding-top:0.2em;line-height:1.2em; padding-right:1.0em;">Preceded By</th>
+			<td style="line-height:1.3em;">J. Caleb Boggs</td>
+		</tr>
+		<tr>
+			<th scope="row" style="padding-top:0.2em;line-height:1.2em; padding-right:1.0em;">Succeeded By</th>
+			<td style="line-height:1.3em;">Ted Kaufman</td>
+		</tr>
+		<tr>
+			<th colspan="2" style="text-align:center;background:#eee;">Personal Details</th>
+		</tr>
+		<tr>
+			<th scope="row" style="padding-top:0.2em;line-height:1.2em; padding-right:1.0em;">Born</th>
+			<td style="line-height:1.3em;">Joseph Robinette Biden Jr. November 20, 1942,(age 79) Scranton, Pennsylvania, U.S.</td>
+		</tr>
+		<tr>
+			<th scope="row" style="padding-top:0.2em;line-height:1.2em; padding-right:1.0em;">Political Party</th>
+			<td style="line-height:1.3em;">Democratic (1969 - present)</td>
+		</tr>
+		<tr>
+			<th scope="row" style="padding-top:0.2em;line-height:1.2em; padding-right:1.0em;">Other Political Affiliations</th>
+			<td style="line-height:1.3em;">Independent (before 1969)</td>
+		</tr>
+		<tr>
+			<th scope="row" style="padding-top:0.2em;line-height:1.2em; padding-right:1.0em;">Spouse(s)</th>
+			<td style="line-height:1.3em;">Nelia Hunter (m. 1966; died 1972)<br />
+			Jill Jacobs (m. 1977)</td>
+		</tr>
+		<tr>
+			<th scope="row" style="padding-top:0.2em;line-height:1.2em; padding-right:1.0em;">Website</th>
+			<td style="line-height:1.3em;">Campaign Website<br />
+			White House website</td>
+		</tr>
+		<tr>
+			<th colspan="2" style="text-align:center;background:#eee;">Other offices</th>
+		</tr>
+		<tr>
+			<th scope="row" style="padding-top:0.2em;line-height:1.2em; padding-right:1.0em;">2007-2009</th>
+			<td style="line-height:1.3em;">Chair of the International Narchotics Control Caucas</td>
+		</tr>
+		<tr>
+			<th scope="row" style="padding-top:0.2em;line-height:1.2em; padding-right:1.0em;">2001 -2003, 2007-2009</th>
+			<td style="line-height:1.3em;">Chair of the Senate Foreign Relations Committee</td>
+		</tr>
+		<tr>
+			<th scope="row" style="padding-top:0.2em;line-height:1.2em; padding-right:1.0em;">1987-1995</th>
+			<td style="line-height:1.3em;">Chair of the Senate Judiciary Committee</td>
 		</tr>
 	</tbody>
 </table>
-<br />
-<style type="text/css">.example { background: #f1f1f9;/* rgb(251, 194, 175); */ font-size:15px; padding: 30px; border-style: dotted; text-align: left; } li { margin-bottom: 5px; margin-top: 5px; margin-left: 10px; } .good { color: #22CC22; } .bad { color: #FF0000; }
-</style>
-<ul class="example">
-	<li><b>Example 1</b><br />
-	<i>Statement:</i> NYSE has fewer than 3,000 stocks listed.<br />
-	&nbsp;
-	<ol>
-		<li><span class="good">✔ Based on the information in the table and what is commonly known, the statement is <b>definitely true</b>.</span></li>
-		<li><span class="bad">✘ Based on the information in the table and what is commonly known, the statement is <b>definitely false</b>.</span></li>
-		<li><span class="bad">✘ The statement <b>could be true, but could also be false</b>. We need additional information that is neither commonly known, nor explicitly mentioned in the table come to a conclusion.​</span></li>
-	</ol>
-	<u><i>Reasons:</i></u> The table says that the number of listings on the New York Stock Exchange is 2,400. Given the context, we know that NYSE is the short form of the New York Stock Exchange and 2,400 is less than 3,000. So the statement is <b>definitely true</b>.</li>
-	<li><b>Example 2</b><br />
-	<i>Statement:</i> Over 2,500 stocks are listed in the NYSE.<br />
-	&nbsp;
-	<ol>
-		<li><span class="bad">✘ Based on the information in the table and what is commonly known, the statement is <b>definitely true</b>.</span></li>
-		<li><span class="good">✔ Based on the information in the table and what is commonly known, the statement is <b>definitely false</b>.</span></li>
-		<li><span class="bad">✘ The statement <b>could be true, but could also be false</b>. We need additional information that is neither commonly known, nor explicitly mentioned in the table come to a conclusion.</span></li>
-	</ol>
-	<u><i>Reasons:</i></u> The table tells us that the number of listings on NYSE is 2,400, not 2,500. So the statement is <b>definitely false</b>.</li>
-	<li><b>Example 3</b><br />
-	<i>Statement:</i> NYSE has an office outside of NYC.<br />
-	&nbsp;
-	<ol>
-		<li><span class="bad">✘ Based on the information in the table and what is commonly known, the statement is <b>definitely true</b>.</span></li>
-		<li><span class="bad">✘ Based on the information in the table and what is commonly known, the statement is <b>definitely false</b>.</span></li>
-		<li><span class="good">✔ The statement <b>could be true, but could also be false</b>. We need additional information that is neither commonly known, nor explicitly mentioned in the table come to a conclusion.</span></li>
-	</ol>
-	<u><i>Reasons:</i></u> From the context, we know NYC is the short form of New York City. We know from the table that NYSE has an office in NYC. However, there is no explicit information on the location of the other offices of NYSE, so we cannot be sure about the statement. Without further information (that may not be commonly known), it is possible that the statement is true, but it is also possible that the statement is false.</li>
-</ul>
 </div>
 </div>
 </div>
 </div>
-<!-- End Instructions --><!-- Survey Link Layout --><!-- End Content for Worker --><!-- Input from Worker -->
+
+<div class="row">
+<div class="col-xs-12 col-md-12">
+<div class="panel panel-primary">
+<div><!-- <table  style="width:22em" align="center" border="1"><caption  style="padding-bottom:0.2em;">Dressage</caption><tbody><tr><th scope="row" style="padding-top:0.2em;line-height:1.2em; padding-right:1.0em;">Highest governing body</th><td style="line-height:1.3em;">International Federation for Equestrian Sports (FEI)</td></tr><tr><th colspan="2" style="text-align:center;background:#eee;">Characteristics</th></tr><tr><th scope="row" style="padding-top:0.2em;line-height:1.2em; padding-right:1.0em;">Contact</th><td style="line-height:1.3em;">No</td></tr><tr><th scope="row" style="padding-top:0.2em;line-height:1.2em; padding-right:1.0em;">Team members</th><td style="line-height:1.3em;">Individual and team at international levels</td></tr><tr><th scope="row" style="padding-top:0.2em;line-height:1.2em; padding-right:1.0em;">Mixed gender</th><td style="line-height:1.3em;">Yes</td></tr><tr><th scope="row" style="padding-top:0.2em;line-height:1.2em; padding-right:1.0em;">Equipment</th><td style="line-height:1.3em;">Horse, appropriate horse tack</td></tr><tr><th scope="row" style="padding-top:0.2em;line-height:1.2em; padding-right:1.0em;">Venue</th><td style="line-height:1.3em;">Arena, indoor or outdoor</td></tr><tr><th colspan="2" style="text-align:center;background:#eee;">Presence</th></tr><tr><th scope="row" style="padding-top:0.2em;line-height:1.2em; padding-right:1.0em;">Country or region</th><td style="line-height:1.3em;">Worldwide</td></tr><tr><th scope="row" style="padding-top:0.2em;line-height:1.2em; padding-right:1.0em;">Olympic</th><td style="line-height:1.3em;">1912</td></tr><tr><th scope="row" style="padding-top:0.2em;line-height:1.2em; padding-right:1.0em;">Paralympic</th><td style="line-height:1.3em;">1996</td></tr></tbody></table>
+-->
+<p>&nbsp;</p>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-body">
+<div class="inlineblock example">
+<h5>​​Answer the question based on time-related facts from the table, and provide a clear and concise explanation for your answer using information from the table.</h5>
+
+<h5><span style="color:#FF0000;"><strong style="font-family: tahoma, geneva, sans-serif; color: inherit;">Question1:</strong></span><span style="color: inherit;">&nbsp;How many years after the second marriage did Joe Biden become POTUS?</span></h5>
+
+<h5><span style="color:#FF0000;"><strong>Answer:</strong></span>&nbsp;44 years</h5>
+
+<h5><span style="color:#FF0000;"><strong>Reason:&nbsp;&nbsp;</strong></span>Joe Biden assumed the presidency on January 20, 2021. He married Jill Jacobs in 1977, which means there were 44 years between his second marriage&nbsp;and his presidency.</h5>
+
+<h5>&nbsp;</h5>
+
+<h5><span style="color:#FF0000;"><strong>Question 2:</strong>&nbsp;</span>Who was Joe Biden married to when he was first elected to the Senate?</h5>
+
+<h5><span style="color:#FF0000;"><strong>Answer:</strong></span>&nbsp;Unmarried</h5>
+
+<h5><span style="color:#FF0000;"><strong>Reason:</strong>&nbsp;</span>Joe Biden was elected to the Senate from Delaware in 1972, and he assumed office on January 3, 1973. He married Nelia Hunter in 1966, and she died in 1972. Joe Biden married Jill Jacobs in 1977. Therefore, he was unmarried when he was first elected to the Senate.</h5>
+
+<h5>&nbsp;</h5>
+
+<h5><span style="color:#FF0000;"><strong>Question 3:</strong></span>&nbsp;At what age does Joe Biden join the democratic political party?​</h5>
+
+<h5><span style="color:#FF0000;"><strong>Answer:</strong></span>&nbsp;27</h5>
+
+<h5><span style="color:#FF0000;"><strong>Reason:</strong></span><em>&nbsp;</em>Joe Biden was born on November 20, 1942. He became involved in politics during his college years and initially identified as an independent. He joined the Democratic Party in 1969, two years before he was first elected to the Senate, at the age of 27.<em>&nbsp;</em></h5>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-body">
+<div class="inlineblock example">
+<h5>​Answer the question based on time-related facts from the table, and provide a clear and concise explanation for your answer using information from the table.</h5>
+
+<h5><span style="color:#FF0000;"><strong>Question 1:&nbsp;</strong></span>What positions did Joe Biden hold in 2008?</h5>
+
+<h5><span style="color:#FF0000;"><strong>Answer:</strong></span>&nbsp;The United States Senator from Delaware, Chair of the International Narcotics Control Caucus, Chair of Senate Foreign Relations Committee</h5>
+
+<h5><span style="color:#FF0000;"><strong>Reason:</strong>&nbsp;</span>Joe Biden served as the United States Senator from Delaware from January 3, 1973, to January 15, 2009. In 2008, he was also serving as the Chair of the International Narcotics Control Caucus (2007-2009) and Chair of the Senate Foreign Relations Committee (2007-2009, and previously 2001-2003)</h5>
+
+<h5>&nbsp;</h5>
+
+<h5><span style="color:#FF0000;"><strong>Question 2:&nbsp;</strong></span>How many total years (terms) does Joe Biden hold as Chair of the Senate Foreign Relations Committee?</h5>
+
+<h5><span style="color:#FF0000;"><strong>Answer:</strong></span>&nbsp;6 years (2)</h5>
+
+<h5><span style="color:#FF0000;"><strong>Reason:</strong>&nbsp;</span>Joe Biden served as Chair of the Senate Foreign Relations Committee for two terms - first from 2001-2003 and then again from 2007-2009. Therefore, the total years he served as Chair of the Senate Foreign Relations Committee was 6 years - from 2001 to 2003 and from 2007 to 2009.</h5>
+
+<h5>&nbsp;</h5>
+
+<h5><span style="color:#FF0000;"><strong>​Question3:&nbsp;</strong></span>Who was the US senator from Delaware in Dec 1972?</h5>
+
+<h5><span style="color:#FF0000;"><strong>Answer:&nbsp;</strong></span>J. Caleb Boggs</h5>
+
+<h5><span style="color:#FF0000;"><strong>Reason:&nbsp;</strong></span>Joe Biden began serving as the United States Senator from Delaware on January 3, 1973, which means he was not in office in December 1972. J. Caleb Boggs, who was the predecessor of Joe Biden, served as the United States Senator from Delaware from 1960 to 1973, including the month of December 1972. Therefore, J. Caleb Boggs was the United States Senator from Delaware in December 1972.</h5>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-body">
+<div class="inlineblock example">
+<h5 style="color: rgb(51, 51, 51);">​Answer the question based on time-related facts from the table, and provide a clear and concise explanation for your answer using information from the table.</h5>
+
+<h5><span style="color:#FF0000;"><strong>Question1:&nbsp;&nbsp;</strong></span>Who was the better half of Joe Biden in 1970?</h5>
+
+<h5><span style="color:#FF0000;"><strong>Answer:</strong></span>&nbsp;Neilia Hunter</h5>
+
+<h5><strong><span style="color:#FF0000;">​Reason:</span><em>&nbsp;</em></strong>&quot;Better half&quot; is a reference to one&#39;s spouse or partner. Joe Biden&#39;s spouses were Nelia Hunter (married in 1966, died in 1972) and Jill Jacobs (married in 1977). Therefore, in 1970, Joe Biden was married to Nelia Hunter.</h5>
+
+<h5>&nbsp;</h5>
+
+<h5><span style="color:#FF0000;"><strong>Question2:&nbsp;</strong></span>&nbsp;What was the relationship status of Joe Biden in 1979?</h5>
+
+<h5><span style="color:#FF0000;"><strong>Answer:</strong></span>&nbsp;Married</h5>
+
+<h5><span style="color:#FF0000;"><strong>​Reason:</strong></span><em>&nbsp;</em>Marital status refers to whether someone is single, married, divorced, etc. In 1979, Joe Biden was married to his second wife, Jill Jacobs, whom he married in 1977.</h5>
+
+<h5>&nbsp;</h5>
+
+<h5><span style="color:#FF0000;"><strong>Question3:&nbsp;</strong></span>&nbsp;How many parties does Joe&rsquo;s Biden&rsquo;s is associated with in his entire lifetime?</h5>
+
+<h5><span style="color:#FF0000;"><strong>Answer:</strong></span>&nbsp;one</h5>
+
+<h5><span style="color:#FF0000;"><strong>​Reason:</strong></span><em>&nbsp;</em>Before 1969, Joe Biden was registered as an Independent, which means he did not have a political party affiliation. However, since 1969, he has been associated with the Democratic Party, and he has been a member of that party ever since. Therefore, Joe Biden has been associated with one&nbsp;political party&nbsp;in his lifetime - the Democratic party (1969 to present).</h5>
+</div>
+</div>
+</div>
+
+<p>&nbsp;</p>
+</div>
+</div>
+</div>
+
+<div class="container">
+<div class="row">
+<div class="col-xs-8 col-sm-8 fields">&nbsp;</div>
+</div>
+</div>
+
+<div class="container">
+<div class="row">
+<div class="col-xs-8 col-sm-8 fields"><!-- End Instructions --><!-- Survey Link Layout --><!-- End Content for Worker --><!-- Input from Worker --><!-- End Instructions --><!-- Survey Link Layout --><!-- End Content for Worker --><!-- Input from Worker -->
+<div class="container">
+<div class="row" id="workContent">&nbsp;</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="container">
+<div class="row">
+<div class="col-xs-8 col-sm-8 fields">
+<div class="container">
+<div class="row"><!--<ul class="example">--><!--<p align="left"><b><span class="bad">Attention</span></b></p>--><!--<li>Please <b>read the above instructions carefully</b> before any attempts to answer the questions.</li>--><!--<li>Using only the table and <b>what you believe most people know</b> about the world.</li>--><!--<li><b>Avoid restating information</b> from the table literally. Write statements that <b>require inference</b>. </li>--><!--<li>Please write <b>grammatically correct and complete sentences</b>.</li>--><!--<li>(Optional) To provide your feedback on the task, please use the following <a href="https://www.w3schools.com/html/">link</a>.</li>--><!--</ul>-->
+<div align="center" class="col-xs-8 col-sm-8 image">${table}</div>
+
+<div class="col-xs-8 col-sm-8 fields">
+<div class="form-group"><strong>​Answer the question based on time-related facts from the table, and provide a clear and concise explanation for your answer using information from the table.</strong></div>
+
+<div class="form-group"><strong>Question:&nbsp;</strong>​${question1}</div>
+
+<div class="form-group"><strong>Answer:</strong><input class="form-control" id="Ans1" name="Ans1" required="" size="200" type="text" /><strong>Reason:</strong> <input class="form-control" id="Res1" name="Res1" required="" size="200" type="text" /></div>
+
+<p><b>(Optional) To provide your feedback on the task, please use the following <a href="https://goo.gl/forms/fcu6aVrvj7aJzpij2" target="_blank">link</a></b></p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="container">
+<div class="row">
+<div class="col-xs-8 col-sm-8 fields">
+<div class="container">
+<p>&nbsp;</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="container">
+<div class="row">
+<div class="col-xs-8 col-sm-8 fields">
+<div class="container">&nbsp;</div>
+</div>
+</div>
+</div>
 
 <div class="container">
 <div class="row" id="workContent">
-<div align="center" class="col-xs-12 col-sm-12 image">${table1}</div>
-
 <div class="col-xs-8 col-sm-8 fields">
-<div class="panel panel-default">
-<div class="panel-body">
-<p>Given the <b>table</b> and the <b>statement below</b>, choose the best option.</p>
-
-<div class="inlineblock example">
-<p class="tweet">${statement0}</p>
-</div>
-
-<div class="inlineblock annotation"><!-- informtion need -->
-<div class="btn-group-vertical"><label class="btn btn-default" for="aq0" style="white-space:normal; text-align: left;"><input id="aq0" name="statement0" required="required" style="margin-right: 5" type="radio" value="0" /> <span> Based on the information in the table and what is commonly known, the statement is <b>definitely true</b>. </span> </label> <label class="btn btn-default" for="weakaq0" style="white-space:normal; text-align: left;"> <input id="weakaq0" name="statement0" required="required" style="margin-right: 5" type="radio" value="2" /> <span> Based on the information in the table and what is commonly known, the statement is <b>definitely false</b>. </span> </label> <label class="btn btn-default" for="weakrq0" style="white-space:normal; text-align: left;"> <input id="weakrq0" name="statement0" required="required" style="margin-right: 5" type="radio" value="1" /> <span> The statement <b>could be true, but could also be false</b>. We need additional information that is neither commonly known, nor explicitly mentioned in the table come to a conclusion. </span> </label></div>
+<div class="container">
+<p>&nbsp;</p>
 </div>
 </div>
 </div>
-
-<div class="panel panel-default">
-<div class="panel-body">
-<p>Given the <b>table</b> and the <b>statement below</b>, choose the best option.</p>
-
-<div class="inlineblock example">
-<p class="question">${statement1}</p>
-</div>
-
-<div class="inlineblock annotation"><!-- informtion need -->
-<div class="btn-group-vertical"><label class="btn btn-default" for="aq1" style="white-space:normal; text-align: left;"><input id="aq1" name="statement1" required="required" style="margin-right: 5" type="radio" value="0" /> <span> Based on the information in the table and what is commonly known, the statement is <b>definitely true</b>. </span> </label> <label class="btn btn-default" for="weakaq1" style="white-space:normal; text-align: left;"> <input id="weakaq1" name="statement1" required="required" style="margin-right: 5" type="radio" value="2" /> <span> Based on the information in the table and what is commonly known, the statement is <b>definitely false</b>. </span> </label> <label class="btn btn-default" for="weakrq1" style="white-space:normal; text-align: left;"> <input id="weakrq1" name="statement1" required="required" style="margin-right: 5" type="radio" value="1" /> <span> The statement <b>could be true, but could also be false</b>. We need additional information that is neither commonly known, nor explicitly mentioned in the table come to a conclusion. </span> </label></div>
-</div>
-</div>
-</div>
-
-<div class="panel panel-default">
-<div class="panel-body">
-<p>Given the <b>table</b> and the <b>statement below</b>, choose the best option.</p>
-
-<div class="inlineblock example">
-<p class="question">${statement2}</p>
-</div>
-
-<div class="inlineblock annotation"><!-- informtion need -->
-<div class="btn-group-vertical"><label class="btn btn-default" for="aq2" style="white-space:normal; text-align: left;"><input id="aq2" name="statement2" required="required" style="margin-right: 5" type="radio" value="0" /> <span> Based on the information in the table and what is commonly known, the statement is <b>definitely true</b>. </span> </label> <label class="btn btn-default" for="weakaq2" style="white-space:normal; text-align: left;"> <input id="weakaq2" name="statement2" required="required" style="margin-right:5" type="radio" value="2" /> <span> Based on the information in the table and what is commonly known, the statement is <b>definitely false</b>. </span> </label> <label class="btn btn-default" for="weakrq2" style="white-space:normal; text-align: left;"> <input id="weakrq2" name="statement2" required="required" style="margin-right: 5" type="radio" value="1" /> <span> The statement <b>could be true, but could also be false</b>. We need additional information that is neither commonly known, nor explicitly mentioned in the table come to a conclusion. </span> </label></div>
-</div>
-</div>
-</div>
-
-<h5>To provide your feedback on the task, please use the following <a href="https://goo.gl/forms/b3xwuoBWAYKEfgYM2">link</a>. <!-- END OF EXAMPLE BODY --></h5>
 </div>
 </div>
 </div>
 </section>
-<link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" integrity="sha384-IS73LIqjtYesmURkDE9MXKbXqYA8rvKEp/ghicjem7Vc3mGRdQRptJSz60tvrB6+" rel="stylesheet" />
-<style type="text/css">#collapseTrigger{ color:#fff; display: block; text-decoration: none; } #submitButton{ white-space: normal; } .image{ margin-bottom: 15px; } /* CSS for breaking long words/urls */ .dont-break-out { overflow-wrap: break-word; word-wrap: break-word; -ms-word-break: break-all; word-break: break-all; word-break: break-word; -ms-hyphens: auto; -moz-hyphens: auto; -webkit-hyphens: auto; hyphens: auto; }
+
+<p>
+<style type="text/css">#collapseTrigger {
+    color: #fff;
+    display: block;
+    text-decoration: none;
+  }
+
+  #submitButton {
+    white-space: normal;
+  }
+
+  .image {
+    margin-bottom: 15px;
+  }
+
+  /* CSS for breaking long words/urls */
+  .dont-break-out {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
 </style>
+<style type="text/css">.example {
+                /* list-style-type: circle; */
+                background: #f1f1f9;
+                /* rgb(251, 194, 175); */
+                font-size: 20px;
+                padding: 30px;
+                border-style: dotted;
+                text-align: left;
+              }
+
+              li {
+                margin-bottom: 5px;
+                margin-top: 5px;
+                margin-left: 10px;
+              }
+
+              .good {
+                color: #22CC22;
+                font-weight: bold;
+              }
+
+              .bad {
+                color: #FF0000;
+                font-weight: bold;
+              }
+</style>
+</p>
+<link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" integrity="sha384-IS73LIqjtYesmURkDE9MXKbXqYA8rvKEp/ghicjem7Vc3mGRdQRptJSz60tvrB6+" rel="stylesheet" /><quillbot-extension-portal></quillbot-extension-portal><quillbot-extension-portal></quillbot-extension-portal><quillbot-extension-portal></quillbot-extension-portal><quillbot-extension-portal></quillbot-extension-portal><quillbot-extension-portal></quillbot-extension-portal><quillbot-extension-portal></quillbot-extension-portal><quillbot-extension-portal></quillbot-extension-portal><quillbot-extension-portal></quillbot-extension-portal><quillbot-extension-portal></quillbot-extension-portal><quillbot-extension-portal></quillbot-extension-portal><quillbot-extension-portal></quillbot-extension-portal><quillbot-extension-portal></quillbot-extension-portal><quillbot-extension-portal></quillbot-extension-portal><quillbot-extension-portal></quillbot-extension-portal><quillbot-extension-portal></quillbot-extension-portal><quillbot-extension-portal></quillbot-extension-portal><quillbot-extension-portal></quillbot-extension-portal><quillbot-extension-portal></quillbot-extension-portal><quillbot-extension-portal></quillbot-extension-portal><quillbot-extension-portal></quillbot-extension-portal><quillbot-extension-portal></quillbot-extension-portal><quillbot-extension-portal></quillbot-extension-portal><quillbot-extension-portal></quillbot-extension-portal><quillbot-extension-portal></quillbot-extension-portal><quillbot-extension-portal></quillbot-extension-portal><quillbot-extension-portal></quillbot-extension-portal><quillbot-extension-portal></quillbot-extension-portal><quillbot-extension-portal></quillbot-extension-portal><quillbot-extension-portal></quillbot-extension-portal><quillbot-extension-portal></quillbot-extension-portal><quillbot-extension-portal></quillbot-extension-portal>
